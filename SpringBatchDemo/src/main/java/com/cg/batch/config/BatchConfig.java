@@ -31,6 +31,9 @@ import com.cg.batch.skipPolicy.StudentSkipPolicy;
 import com.cg.batch.tasklet.GenderTasklet;
 import com.cg.batch.tasklet.StudentTasklet;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 @EnableBatchProcessing
 public class BatchConfig {
@@ -51,6 +54,7 @@ public class BatchConfig {
 		flatFileItemReader.setName("Employee-CSV-Reader");
 		flatFileItemReader.setLinesToSkip(1);
 		flatFileItemReader.setLineMapper(studentLineMapper());
+		log.info("hello");
 		return flatFileItemReader;
 	}
 
